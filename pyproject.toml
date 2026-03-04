@@ -1,6 +1,6 @@
 [project]
 name = "zai-tts"
-version = "0.1.0"
+version = "0.1.1"
 description = "ZAI/GLM TTS, 免费的语音合成API，支持克隆音色，基于智谱TTS"
 readme = "README.md"
 requires-python = ">=3.10"

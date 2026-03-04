@@ -66,6 +66,11 @@ async def async_main():
     parser.add_argument("--speed", help="Speed", default="1")
     parser.add_argument("--volume", help="Volume", default="1")
     args = parser.parse_args()
+    if args.file in ("-", "/dev/stdin"):
+        args.text = sys.stdin.read()
+    elif args.file:
+        with open(args.file, encoding="utf-8") as file:
+            args.text = file.read()
 
     async with aiohttp.ClientSession(base_url=BASE_URL) as session:
         client = Client(session)
